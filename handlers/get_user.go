@@ -29,7 +29,6 @@ func GetUser(service storage.GetterOne) func(w http.ResponseWriter, r *http.Requ
 			return
 		}
 
-		w.WriteHeader(http.StatusOK)
 		w.Header().Set("Content-Type", "application/json")
 		_, _ = w.Write(bytes)
 	}

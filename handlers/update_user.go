@@ -45,7 +45,6 @@ func UpdateUser(service storage.Updater) func(w http.ResponseWriter, r *http.Req
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusBadRequest)
 		} else {
-			w.WriteHeader(http.StatusOK)
 			w.Header().Set("Content-Type", "application/json")
 			_, _ = w.Write(bytes)
 		}
