@@ -1,7 +1,6 @@
 package helpers
 
 import (
-	"log"
 	"net/http"
 )
 
@@ -22,7 +21,6 @@ func WithMethod(fn func(http.ResponseWriter, *http.Request), method string) http
 
 func Cors(h http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		log.Print("CORS")
 		w.Header().Set("Access-Control-Allow-Origin", CorsOrigin)
 		w.Header().Set("Access-Control-Allow-Methods", CorsMethods)
 		w.Header().Set("Access-Control-Allow-Headers", CorsHeaders)
